@@ -3,7 +3,6 @@ import telebot
 import sqlite3
 from telebot import *
 bot = telebot.TeleBot('964957577:AAHQlnTDLdyLxDsrnsSE8M0HcxRwMup6YDk')
-newspath = input('Enter path to message to send to user as News!:')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, False)
 keyboard1.row('Отправить сообщение')
 @bot.message_handler(commands=['start'])
