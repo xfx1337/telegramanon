@@ -33,7 +33,7 @@ def send_text(message):
 			for line in f:
 				try:
 					bot.send_message(line, userm)
-				except:				except:
+				except:
 					pass
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
 		bot.register_next_step_handler(sent, mess)
