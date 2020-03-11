@@ -36,6 +36,8 @@ def send_text(message):
 				except:
 					try:
 						bot.send_photo(line, userm)
+					except:
+						pass
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
 		bot.register_next_step_handler(sent, mess)
 bot.polling(none_stop=True)
