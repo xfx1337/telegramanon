@@ -35,7 +35,7 @@ def send_text(message):
 					bot.send_message(line, userm)
 				except:
 					try:
-						bot.send_photo(line, photo=message)
+						bot.send_photo(line, photo=message.content)
 					except:
 						pass
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
