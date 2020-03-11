@@ -18,12 +18,6 @@ def start_message(message):
 def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
 		def mess(message):
-			f = open("ids.txt", "r")
-			for line in f:
-				try:
-					bot.send_message(line, "Пользователь пишет")
-				except:
-					pass
 			print(message.chat.id)
 			try :
 				userm = message.text
@@ -41,6 +35,9 @@ def send_text(message):
 					bot.send_message(line, userm)
 				except:
 					pass
+		f = open("ids.txt", "rb")
+		for line in f:
+			bot.send_message(line, "Пользователь пишет")
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
 		bot.register_next_step_handler(sent, mess)
 bot.polling(none_stop=True)
