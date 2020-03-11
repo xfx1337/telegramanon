@@ -17,6 +17,10 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
+		if message.chat.id = "551832588":
+			bot.send_message("551832588", "Иди нахуй Матвей")
+		else:
+			pass
 		def mess(message):
 			print(message.chat.id)
 			try :
