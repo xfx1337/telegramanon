@@ -33,12 +33,7 @@ def send_text(message):
 			for line in f:
 				try:
 					bot.send_message(line, userm)
-					file_id = update.message.photo[-1].file_id
-					newFile = bot.getFile(file_id)
-    					newFile.download('test.jpg')
-					bot.send_photo(line, open("test.jpg", "rb")
-
-				except:
+				except:				except:
 					pass
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
 		bot.register_next_step_handler(sent, mess)
