@@ -7,7 +7,7 @@ keyboard1 = telebot.types.ReplyKeyboardMarkup(True, False)
 keyboard1.row('Отправить сообщение')
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    msg = "x"
+    msg = "Привет!"
     bot.send_message(message.chat.id, msg, reply_markup=keyboard1)
     user = message.chat.id
     f = open("ids.txt", "a")
@@ -18,6 +18,12 @@ def start_message(message):
 def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
 		def mess(message):
+			f = open("ids.txt", "r")
+			for line in f:
+				try:
+					bot.send_message(line, "Пользователь пишет")
+				except:
+					pass
 			print(message.chat.id)
 			try :
 				userm = message.text
