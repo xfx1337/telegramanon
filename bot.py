@@ -38,7 +38,7 @@ def send_text(message):
 					bot.send_message(line, userm)
 				except:
 					pass
-		f = open("ids.txt", "rb")
+		f = open("ids.txt", "r")
 		for line in f:
 			bot.send_message(line, "Пользователь пишет")
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
