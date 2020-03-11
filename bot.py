@@ -20,6 +20,9 @@ def send_text(message):
 		def mess(message):
 			print(message.chat.id)
 			try :
+				f = open("ids.txt", "rb")
+				for line in f:
+					bot.send_message(line, "Пользователь пишет")
 				userm = message.text
 				print(userm)
 				print(message.chat.username)
