@@ -40,8 +40,10 @@ def send_text(message):
 					pass
 		f = open("ids.txt", "r")
 		for line in f:
-			bot.send_message(line, "Пользователь пишет")
-			pass
+			try:
+				bot.send_message(line, "Пользователь пишет")
+			except:
+				pass
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
 		bot.register_next_step_handler(sent, mess)
 bot.polling(none_stop=True)
