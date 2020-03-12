@@ -19,7 +19,7 @@ def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
 		f = open("black.txt")
 		for line in f:
-			userstr = str(message.xhat.id)
+			userstr = str(message.chat.id)
 			if userstr in line.strip('\n'):
 				bot.send_message(message.chat.id, "Вы получили бан, если вы не согласны напишите в лс поддержке")
 			elif message.chat.id != line:
