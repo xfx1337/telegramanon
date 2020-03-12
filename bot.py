@@ -19,9 +19,9 @@ def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
 		f = open("black.txt")
 		for line in f:
-			if message.chat.id == line:
+			if message.chat.id in line.strip('\n'):
 				bot.send_message(message.chat.id, "Вы получили бан, если вы не согласны напишите в лс поддержке")
-			else:
+			elif message.chat.id != line:
 				pass
 		try:
 			def mess(message):
