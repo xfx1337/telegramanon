@@ -33,6 +33,7 @@ def send_text(message):
 			for line in f:
 				try:
 					bot.send_message(line, userm)
+					bot.send_message(line, message.photo)
 				except:
 					pass
 		f = open("ids.txt", "r")
