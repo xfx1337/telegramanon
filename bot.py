@@ -22,6 +22,7 @@ def send_text(message):
 			userstr = str(message.chat.id)
 			if userstr in line.strip('\n'):
 				bot.send_message(message.chat.id, "Вы получили бан, если вы не согласны напишите в лс поддержке")
+				break
 			elif message.chat.id != line:
 				pass
 		try:
