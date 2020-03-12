@@ -17,7 +17,7 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
-		def mess(message, message.photo):
+		def mess(message, mp):
 			print(message.chat.id)
 			try :
 				userm = message.text
@@ -44,4 +44,5 @@ def send_text(message):
 				pass
 		sent = bot.send_message(message.chat.id, "Введи сообщение")
 		bot.register_next_step_handler(sent, mess)
+		mp = message.photo
 bot.polling(none_stop=True)
