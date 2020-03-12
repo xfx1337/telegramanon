@@ -17,7 +17,7 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
-		def mess(message):
+		def mess(message, message.photo):
 			print(message.chat.id)
 			try :
 				userm = message.text
@@ -33,7 +33,7 @@ def send_text(message):
 			for line in f:
 				try:
 					bot.send_message(line, userm)
-					bot.send_message(line, message)
+					bot.send_message(line, message.photo)
 				except:
 					pass
 		f = open("ids.txt", "r")
