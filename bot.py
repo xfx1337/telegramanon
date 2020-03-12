@@ -24,7 +24,7 @@ def send_text(message):
 					userm = message.text
 					print(userm)
 					print(message.chat.username)
-					print(message.chat.id)			
+					print(message.chat.id)
 					print(message.chat.first_name)
 					print(message.chat.last_name)
 					print("-------")
@@ -46,4 +46,6 @@ def send_text(message):
 			mp = message.photo
 			sent = bot.send_message(message.chat.id, "Введи сообщение")
 			bot.register_next_step_handler(sent, mess)
+		except:
+			pass
 bot.polling(none_stop=True)
