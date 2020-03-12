@@ -17,32 +17,33 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
 	if message.text.lower() == 'отправить сообщение':
-		def mess(message, mp):
-			print(message.chat.id)
-			try :
-				userm = message.text
-				print(userm)
-				print(message.chat.username)
-				print(message.chat.id)			
-				print(message.chat.first_name)
-				print(message.chat.last_name)
-				print("-------")
-			except:
-				pass
+		try:
+			def mess(message, mp):
+				print(message.chat.id)
+				try :
+					userm = message.text
+					print(userm)
+					print(message.chat.username)
+					print(message.chat.id)			
+					print(message.chat.first_name)
+					print(message.chat.last_name)
+					print("-------")
+				except:
+					pass
+				f = open("ids.txt", "r")
+				for line in f:
+					try:
+						bot.send_message(line, userm)
+						bot.send_message(line, message.photo)
+					except:
+						pass
 			f = open("ids.txt", "r")
 			for line in f:
 				try:
-					bot.send_message(line, userm)
-					bot.send_message(line, message.photo)
+					bot.send_message(line, "Пользователь пишет")
 				except:
 					pass
-		f = open("ids.txt", "r")
-		for line in f:
-			try:
-				bot.send_message(line, "Пользователь пишет")
-			except:
-				pass
-		sent = bot.send_message(message.chat.id, "Введи сообщение")
-		bot.register_next_step_handler(sent, mess)
-		mp = message.photo
+			mp = message.photo
+			sent = bot.send_message(message.chat.id, "Введи сообщение")
+			bot.register_next_step_handler(sent, mess)
 bot.polling(none_stop=True)
