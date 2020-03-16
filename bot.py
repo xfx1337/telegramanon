@@ -1,4 +1,3 @@
-import forex-python
 from forex-python import *
 import os, time
 import telebot
