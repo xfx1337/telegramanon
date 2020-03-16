@@ -62,7 +62,8 @@ def send_text(message):
 			pass
 	if message.text.lower() == 'курс валют':
 		rub_dol = c.get_rate('USD', "RUB")
-		rub_dolx = "USD(Доллар) = " + rub_dol + "RUB(Рубль)"
+		rub_dol2 = str(rub_dol)
+		rub_dolx = "USD(Доллар) = " + rub_dol2 + "RUB(Рубль)"
 		bot.send_message(message.chat.id, rub_dolx)
 		btc_usd = b.get_latest_price('USD')
 		btc_usd2 = str(btc_usd)
