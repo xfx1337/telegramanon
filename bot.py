@@ -78,7 +78,7 @@ def send_text(message):
 		btc_rubx = "BTC(Bitcoin) = " + btc_rub2 + " RUB(Рубль)"
 		bot.send_message(message.chat.id, btc_rubx)
 		eur = c.get_rate('EUR', "RUB")
-		uer2 = round(eur, 2)
+		eur2 = round(eur, 2)
 		eur4 = str(eur2)
 		eur5 = "EUR(Евро) = " + eur4 + " RUB(Рубль)"
 		bot.send_message(message.chat.id, eur5)
