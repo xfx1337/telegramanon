@@ -1,7 +1,11 @@
+import forex-python
+from forex-python import *
 import os, time
 import telebot
 import sqlite3
 from telebot import *
+from forex_python.converter import CurrencyRates
+c = CurrencyRates()
 bot = telebot.TeleBot('964957577:AAHQlnTDLdyLxDsrnsSE8M0HcxRwMup6YDk')
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, False)
 keyboard1.row('Отправить сообщение')
@@ -55,4 +59,7 @@ def send_text(message):
 			bot.register_next_step_handler(sent, mess)
 		except:
 			pass
+	if message.text.lower("курс валют"):
+		rub_dol = c.get_rate('USD', "RUB")
+		bot.send_message(message.chat.id, rub_dol)
 bot.polling(none_stop=True)
