@@ -65,7 +65,7 @@ def send_text(message):
 		rub_dolx = "USD(Доллар) = " + rub_dol + "RUB(Рубль)"
 		bot.send_message(message.chat.id, rub_dolx)
 		btc_usd = b.get_latest_price('USD')
-		btc_usdx = "BTC(Bitcoin) = " + btc_usd + "USD(Доллар)
+		btc_usdx = "BTC(Bitcoin) = " + btc_usd + "USD(Доллар)"
 		bot.send_message(message.chat.id, btc_usdx)
 		btc_rub = b.get_latest_price('RUB')
 		btc_rubx = "BTC(Bitcoin) = " + btc_rub + " RUB(Рубль)
