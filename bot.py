@@ -1,4 +1,4 @@
-from forex-python import *
+from forex_python.converter import CurrencyRates
 import os, time
 import telebot
 import sqlite3
