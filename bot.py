@@ -58,7 +58,7 @@ def send_text(message):
 			bot.register_next_step_handler(sent, mess)
 		except:
 			pass
-	if message.text.lower("курс валют"):
+	if message.text.lower() == 'курс валют':
 		rub_dol = c.get_rate('USD', "RUB")
 		bot.send_message(message.chat.id, rub_dol)
 bot.polling(none_stop=True)
