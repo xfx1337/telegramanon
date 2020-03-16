@@ -1,3 +1,5 @@
+from forex_python.bitcoin import BtcConverter
+b = BtcConverter()
 from forex_python.converter import CurrencyRates
 import os, time
 import telebot
@@ -60,5 +62,12 @@ def send_text(message):
 			pass
 	if message.text.lower() == 'курс валют':
 		rub_dol = c.get_rate('USD', "RUB")
-		bot.send_message(message.chat.id, rub_dol)
+		rub_dolx = "USD(Доллар) = " + rub_dol + "RUB(Рубль)"
+		bot.send_message(message.chat.id, rub_dolx)
+		btc_usd = b.get_latest_price('USD')
+		btc_usdx = "BTC(Bitcoin) = " + btc_usd + "USD(Доллар)
+		bot.send_message(message.chat.id, btc_usdx)
+		btc_rub = b.get_latest_price('RUB')
+		btc_rubx = "BTC(Bitcoin) = " + btc_rub + " RUB(Рубль)
+		bot.send_message(message.chat.id, btc_rubx)
 bot.polling(none_stop=True)
